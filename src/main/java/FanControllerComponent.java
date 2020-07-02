@@ -1,35 +1,29 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-public class FanControllerComponent extends JComponent {
+public class FanControllerComponent {
+
     public static final int DEFAULT_WIDTH = 300;
     public static final int DEFAULT_HEIGHT = 400;
 
-    private BufferedImage image;
+    JFrame FanControl() {
+        JFrame frame = new JFrame();
 
-    public FanControllerComponent() {
-        String pathName = "C:\\Users\\Nissmel\\IdeaProjects\\ExternalFanControll\\src\\main\\java\\test.jpg";
-        try {
-            image = ImageIO.read(new File(pathName));
-        } catch (IOException ex) {
-            System.out.println("No " + pathName + " found!");
-        }
+        final int WIDTH = 1280, HEIGHT = 720;
+
+        frame.getContentPane().setBackground(Color.WHITE);
+        frame.getContentPane().setLayout(null);
+
+
+        frame.setBounds(100, 100, WIDTH, HEIGHT);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("MyBREEDS Viewer");
+        frame.setResizable(false);
+        frame.setVisible(true);
+
+        return frame;
     }
-
-    public void paintComponent(Graphics g) {
-        if (image == null) return;
-        super.paintComponent(g);
-        g.drawImage(image, 0, 0, this);
-
-    }
-
-    public Dimension getPreferredSize() {
-        return new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT);
-    }
-
-
 }
+
+
+
