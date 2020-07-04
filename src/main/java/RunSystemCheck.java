@@ -1,17 +1,18 @@
 import com.profesorfalken.jsensors.JSensors;
 import com.profesorfalken.jsensors.model.components.Components;
 
+import javax.swing.*;
 import java.util.TimerTask;
 
 public class RunSystemCheck extends TimerTask {
     public void run() {
         Components components = JSensors.get.components();
 
-        SystemData systemData = new SystemData();
-        systemData.getSystemData(components);
+        CollectSystemData collectSystemData = new CollectSystemData(components);
 
-        DisplaySystemData displaySystemData = new DisplaySystemData();
-        displaySystemData.displayDataToConsole(systemData);
+        DisplayData wdd = new DisplayData();
+        wdd.displayDataToConsole(collectSystemData);
+        wdd.displayDataToWindow(collectSystemData);
     }
 }
 

@@ -6,12 +6,12 @@ import com.profesorfalken.jsensors.model.sensors.Temperature;
 
 import java.util.List;
 
-public class SystemData {
+public class CollectSystemData {
     String cpuName, gpuName;
     double cpuPackageTemp, cpuLoad, ramLoad;
     double gpuTemp, gpuLoad, gpuRamLoad;
 
-    public void getSystemData(Components components) {
+    public CollectSystemData(Components components) {
         List<Cpu> cpus = components.cpus;
         List<Gpu> gpus = components.gpus;
 
@@ -24,7 +24,7 @@ public class SystemData {
 
                     List<Load> cpuLoads = cpu.sensors.loads;
                     cpuLoad = (cpuLoads.get(cpuLoads.size() - 2).value) / 100000;
-                    ramLoad = (cpuLoads.get(cpuLoads.size() - 1).value) / 100000;
+                    ramLoad = (cpuLoads.get(cpuLoads.size() - 1).value);
                 }
             }
         }
@@ -43,5 +43,6 @@ public class SystemData {
                 }
             }
         }
+
     }
 }
