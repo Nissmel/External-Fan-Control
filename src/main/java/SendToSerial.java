@@ -50,6 +50,7 @@ public class SendToSerial {
         }
     }
 
+
     private void closeComPort() {
         if (comPorts.length > 0 && comPorts[portNumber].isOpen() && comPorts[portNumber] != null) {
             try {
