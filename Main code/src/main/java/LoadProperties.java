@@ -12,7 +12,7 @@ public class LoadProperties {
     }
 
     private void readPropertiesFile() {
-        try (InputStream input = new FileInputStream("src/main/resources/config.properties")) {
+        try (InputStream input = new FileInputStream("Main code/src/main/resources/config.properties")) {
             prop.load(input);
         } catch (IOException ex) {
             ex.printStackTrace();
