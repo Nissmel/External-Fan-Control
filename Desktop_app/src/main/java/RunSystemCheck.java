@@ -12,7 +12,7 @@ public class RunSystemCheck extends TimerTask {
         System.out.println(systemData.toString());
 
         SendToSerial sendToSerial = new SendToSerial();
-        sendToSerial.openConnectionAndsendStringToSerial(systemData);
+        sendToSerial.openConnectionAndSendMessageToSerial(sendToSerial.createMessageFromFetchSystemStats(systemData));
     }
 }
 

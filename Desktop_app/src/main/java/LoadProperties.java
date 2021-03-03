@@ -12,7 +12,7 @@ public class LoadProperties {
     }
 
     private void readPropertiesFile() {
-        try (InputStream input = new FileInputStream("Main code/src/main/resources/config.properties")) {
+        try (InputStream input = new FileInputStream("Desktop_app/src/main/resources/config.properties")) {
             prop.load(input);
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -23,12 +23,12 @@ public class LoadProperties {
         return prop.getProperty("comPort");
     }
 
-    public String getCutGPUname() {
-        return prop.getProperty("cutGPUname");
+    public String getCutGpuName() {
+        return prop.getProperty("cutGpuName");
     }
 
-    public String getCutCPUname() {
-        return prop.getProperty("cutCPUname");
+    public String getCutCpuName() {
+        return prop.getProperty("cutCpuName");
     }
 
     public int getDataReadDelayMs() {
@@ -38,4 +38,10 @@ public class LoadProperties {
     public int getBaudRate() {
         return Integer.parseInt(prop.getProperty("baudRate"));
     }
+
+    public int getAudibleLevel() {
+        return Integer.parseInt(prop.getProperty("audibleLevel"));
+    }
+
 }
+
